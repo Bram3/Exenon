@@ -1,0 +1,29 @@
+{
+  "name": "Exenon",
+  "version": "1.0.0",
+  "description": "Another general purpose discord bot",
+  "main": "./dist/Main.js",
+  "repository": "https://github.com/Bram3/Exenon",
+  "author": "Bram3",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "start": "node ./dist/Main.js"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "typescript": "^4.6.2"
+  },
+  "dependencies": {
+    "@discordjs/builders": "^0.12.0",
+    "@discordjs/rest": "^0.3.0",
+    "@discordx/importer": "^1.1.2",
+    "discord.js": "^13.6.0",
+    "discordx": "^9.3.4",
+    "dotenv": "^16.0.0",
+    "prettier": "^2.5.1",
+    "reflect-metadata": "^0.1.13",
+    "tsyringe": "^4.6.0",
+    "winston": "^3.6.0"
+  }
+}
