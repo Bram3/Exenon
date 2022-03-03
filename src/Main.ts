@@ -6,6 +6,7 @@ import { Beans } from './DI/Beans'
 import { Client, DIService } from 'discordx'
 import { Intents } from 'discord.js'
 import { importx } from '@discordx/importer'
+import { Connection, createConnection } from 'typeorm'
 
 config()
 
@@ -13,7 +14,13 @@ config()
 export class Main {
   constructor(@inject(Beans.Token) private token: string) {}
   public async start(): Promise<void> {
-    logger.info(this.token)
+    const connection = await createConnection({
+      type: 'better-sqlite3',
+      database: './data/database.sqlite',
+      synchronize: true,
+      entities: [__dirname + '/database/entities/*.{js,ts}']
+    })
+
     const client = new Client({
       botGuilds: [(client) => client.guilds.cache.map((guild) => guild.id)],
       intents: [
@@ -26,7 +33,9 @@ export class Main {
     await importx(`${__dirname}/{commands,events}/**/*.{ts,js}`)
 
     container.registerInstance(Client, client)
+    container.registerInstance(Connection, connection)
 
+    logger.info('Connecting...')
     await client.login(this.token)
   }
 }
