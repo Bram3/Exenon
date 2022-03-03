@@ -1,14 +1,10 @@
-import { Guild } from 'discord.js'
-import { Client } from 'discordx'
-import { container } from 'tsyringe'
+import { Guild } from 'discord.js';
 
 export function isTextChannel(channelId: string, guild: Guild) {
-  const client: Client = container.resolve(Client)
-
-  var channel = guild.channels.cache.get(channelId)
+  var channel = guild.channels.cache.get(channelId);
 
   if (channel === undefined) {
-    return false
+    return false;
   }
-  return true
+  return true;
 }

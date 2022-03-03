@@ -16,16 +16,7 @@
     "outDir": "./dist",
     "allowSyntheticDefaultImports": true
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "./dist"
-  ],
-  "indent": [
-    true,
-    "spaces",
-    2
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "./dist"],
+  "indent": [true, "spaces", 2]
 }

@@ -1,3 +1,3 @@
 export namespace Beans {
-  export const Token = Symbol("Token")
+  export const Token = Symbol('Token');
 }

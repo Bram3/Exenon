@@ -1,4 +1,4 @@
-import { addColors, createLogger, format, transports } from 'winston'
+import { addColors, createLogger, format, transports } from 'winston';
 
 const logLevels = {
   error: 0,
@@ -7,8 +7,8 @@ const logLevels = {
   modules: 3,
   modwarn: 4,
   modinfo: 5,
-  debug: 6
-}
+  debug: 6,
+};
 
 addColors({
   error: 'red',
@@ -17,23 +17,23 @@ addColors({
   modules: 'cyan',
   modwarn: 'yellow',
   modinfo: 'green',
-  debug: 'blue'
-})
+  debug: 'blue',
+});
 
 const logger = createLogger({
   levels: logLevels,
   transports: [
     new transports.Console({
-      format: format.combine(format.colorize(), format.timestamp())
-    })
+      format: format.combine(format.colorize(), format.timestamp()),
+    }),
   ],
   format: format.combine(
     format.colorize(),
     format.padLevels({ levels: logLevels }),
     format.timestamp(),
-    format.printf((info) => `${info.timestamp} ${info.level}:${info.message}`)
+    format.printf((info) => `${info.timestamp} ${info.level}:${info.message}`),
   ),
-  level: 'debug'
-})
+  level: 'debug',
+});
 
-export default logger
+export default logger;

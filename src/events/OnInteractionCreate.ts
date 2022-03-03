@@ -1,5 +1,5 @@
-import { ArgsOf, Client, Discord, On } from 'discordx'
-import { injectable } from 'tsyringe'
+import { ArgsOf, Client, Discord, On } from 'discordx';
+import { injectable } from 'tsyringe';
 
 @Discord()
 @injectable()
@@ -8,8 +8,8 @@ export class OnInteractionCreate {
 
   @On('interactionCreate')
   async onInteractionCreate([
-    interaction
+    interaction,
   ]: ArgsOf<'interactionCreate'>): Promise<void> {
-    this.client.executeInteraction(interaction)
+    this.client.executeInteraction(interaction);
   }
 }

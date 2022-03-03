@@ -1,6 +1,6 @@
-import { Client, Discord, Once } from 'discordx'
-import { injectable } from 'tsyringe'
-import logger from '../utils/Logger'
+import { Client, Discord, Once } from 'discordx';
+import { injectable } from 'tsyringe';
+import logger from '../utils/Logger';
 
 @Discord()
 @injectable()
@@ -10,11 +10,11 @@ export class OnReady {
   @Once('ready')
   async onReady(): Promise<void> {
     await this.client.initApplicationCommands({
-      guild: { log: false }
-    })
-    await this.client.initApplicationPermissions(true)
+      guild: { log: false },
+    });
+    await this.client.initApplicationPermissions(true);
     logger.info(
-      `Logged in as: ${this.client.user?.tag} (id: ${this.client.user?.id})`
-    )
+      `Logged in as: ${this.client.user?.tag} (id: ${this.client.user?.id})`,
+    );
   }
 }

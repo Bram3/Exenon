@@ -1,22 +1,22 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class GuildSettingsEntity {
   @PrimaryGeneratedColumn()
-  id: number
+  id: number;
 
   @Column()
-  guildId: string
+  guildId: string;
 
   @Column()
-  name: string
+  name: string;
 
   @Column()
-  value: string
+  value: string;
 
   @Column({ type: 'datetime', default: () => "datetime('now')" })
-  createdAt: Date
+  createdAt: Date;
 
   @Column({ type: 'datetime', default: () => "datetime('now')" })
-  updatedAt: Date
+  updatedAt: Date;
 }

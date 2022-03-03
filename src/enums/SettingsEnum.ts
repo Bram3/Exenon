@@ -1,4 +1,4 @@
 export enum SETTINGS {
-  logsEnabled = "logsEnabled",
-  logsChannelId = "logsChannelId"
+  logsEnabled = 'logsEnabled',
+  logsChannelId = 'logsChannelId',
 }
